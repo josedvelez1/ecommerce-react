@@ -1,8 +1,9 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import './Styles.css';
 import {Home, Login, ProductDetail, Purchases} from './pages'
-import {LoadingScreen, NavBar} from './components'
+import {LoadingScreen, NavBar, ProtectedRoutes} from './components'
 import {useSelector} from 'react-redux'
+
 
 function App() {
 
@@ -15,8 +16,14 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/Products/:id' element={<ProductDetail />}/>
-          <Route path='/Purchases' element={<Purchases />}/>
           <Route path='/Login' element={<Login />}/>
+
+
+          <Route element={<ProtectedRoutes />}>
+            <Route path='/Purchases' element={<Purchases />}/>
+
+          </Route>
+
         </Routes>
       </div>
     </HashRouter>
