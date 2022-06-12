@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getCart } from '../store/Slices/cart.slice';
 
+
 const NavBar = () => {
 
     const logout = () => localStorage.setItem("token", "")
@@ -18,7 +19,7 @@ const NavBar = () => {
             <Link to="/">Home</Link>
             <Link to="/Login">Login</Link>
             <Link to="/Purchases">Purchases</Link>
-            <button>Cart</button>
+            <Link to="/Cart">Cart</Link>
             <button onClick={logout} >Log out</button>
         </div>
     );

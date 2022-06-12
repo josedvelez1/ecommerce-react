@@ -1,8 +1,9 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import './Styles.css';
-import {Home, Login, ProductDetail, Purchases} from './pages'
+import {CardSide, Home, Login, ProductDetail, Purchases} from './pages'
 import {LoadingScreen, NavBar, ProtectedRoutes} from './components'
 import {useSelector} from 'react-redux'
+
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
 
           <Route element={<ProtectedRoutes />}>
             <Route path='/Purchases' element={<Purchases />}/>
+            <Route path='/Cart' element={<CardSide />}/>
 
           </Route>
 
